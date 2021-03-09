@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>test</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        line-height: 1.5;
+      }
+      html {
+        /* overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%; */
+      }
+      body {
+      }
+      .contents {
+        padding: 50px;
+      }
+      .card {
+        margin-top: 50px;
+        height: 300px;
+        text-align: center;
+        line-height: 300px;
+      }
+      .card:first-child {
+        margin-top: 0;
+      }
+      .wrap {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .modalset {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 0;
+        overflow: hidden;
+        overflow-y: auto;
+        z-index: 3;
+      }
+
+      .modal {
+        background-color: #fff;
+        position: relative;
+        z-index: 2;
+        margin: 0 auto;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        z-index: 2;
+
+        transform: translate(-50%, -50%);
+      }
+      .c {
+        display: inline-block;
+        vertical-align: top;
+        min-width: 200px;
+        min-height: 50px;
+        font-size: 30px;
+        border: 1px dashed #ccc;
+        margin: 40px;
+      }
+      .x {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        line-height: 30px;
+      }
+      .dimmed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="contents">
+      <article class="card" style="background-color: #f00">open layer</article>
+      <article class="card" style="background-color: #ff0">open layer</article>
+      <article class="card" style="background-color: #f0f">open layer</article>
+      <article class="card" style="background-color: #0ff">open layer</article>
+      <article class="card" style="background-color: #f00">open layer</article>
+    </section>
+    <div id="__wrap" class="wrap" style="display: none">
+      <div class="modalset">
+        <div class="modal" id="__modal">
+          <div class="c" contenteditable="true"></div>
+          <div class="x" onClick="closeLayer();">X</div>
+        </div>
+      </div>
+      <div class="dimmed"></div>
+    </div>
+    <script>
+      var a = document.getElementById('__wrap');
+      document.addEventListener('click', function (e) {
+        console.log(e.target);
+        console.log(document.documentElement.scrollTop);
+        window.scrollTo(0, 357);
+        if (e.target.className === 'card') {
+          a.style.display = 'block';
+        }
+      });
+      function closeLayer() {
+        var a = document.getElementById('__wrap');
+        a.style.display = 'none';
+      }
+      //   document.addEventListener(
+      //     'touchmove',
+      //     function (e) {
+      //       return false;
+      //     },
+      //     { passive: false }
+      //   );
+      //   document.addEventListener(
+      //     'wheel',
+      //     function (e) {
+      //       e.preventDefault();
+      //     },
+      //     { passive: false }
+      //   );
+    </script>
+  </body>
+</html>
