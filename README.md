@@ -4,7 +4,7 @@
 
 ## translate 기법 vs inline-block 기법
 
-#### translate 기법 ([here](https://git.linecorp.com/pages/joontop/layer2/1.html))
+#### translate 기법 ([here](https://codemixia.github.io/layer/1.html))
 
 top, left 는 화면 기준, translateXY 는 모달 사이즈 기준
 
@@ -25,7 +25,7 @@ top, left 는 화면 기준, translateXY 는 모달 사이즈 기준
 
 화면을 줄였을때도 화면과 모달이 기준이 되기 때문에 잘리는걸 볼수 있다.
 
-#### inline-block 기법 ([here](https://git.linecorp.com/pages/joontop/layer2/2.html))
+#### inline-block 기법 ([here](https://codemixia.github.io/layer/2.html))
 
 inline 속성을 가지는 요소들은 vertical-align:middle 로 중앙정렬을 시킬수 있다. after 넣은 요소를 박스의 100% 로 차지하게 만들어서 modal을 중앙에 위치시키는 방법이다.
 
@@ -72,7 +72,7 @@ inline 속성을 가지는 요소들은 vertical-align:middle 로 중앙정렬�
 
 딤드 레이어를 열었을때 하딘에 비치는 일반 컨텐츠의 스크롤 (html) 을 동작하지 않게 만들어달라는 요구가 많다. 일반적으로 당연한것처럼 사용되어 왔다. 상황에 따라 사용했던 방법이 달랐다.
 
-#### 지원 환경이 모바일이고 내부스크롤이 없을때 ([here](https://git.linecorp.com/pages/joontop/layer2/3.html))
+#### 지원 환경이 모바일이고 내부스크롤이 없을때 ([here](https://codemixia.github.io/layer/3.html))
 
 레이어를 열었을때 document 의 touchmove event 를 막는다.
 
@@ -110,7 +110,7 @@ document.addEventListener(
 
 - 스크롤 막대를 직접 클릭해서 끌었을때는 막지 못한다.
 
-#### 모바일, PC 지원이고 유동픽셀이고 컨텐츠가 길때 ([here](https://git.linecorp.com/pages/joontop/layer2/4.html))
+#### 모바일, PC 지원이고 유동픽셀이고 컨텐츠가 길때 ([here](https://codemixia.github.io/layer/4.html))
 
 레이어를 열었을때 html은 overflow:hidden, body는 가둬줄 영역으로 만든다.
 
